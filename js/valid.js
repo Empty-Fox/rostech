@@ -20,13 +20,7 @@ $(document).ready(function () {
     $(function () {
         var form = $("#form1")
         form.validate({
-            onfocusout: function (element) {
-                if (this.currentElements.length != 0 && this.currentElements[0].name == "email") {
-                    rebuidEmail($(this.currentElements[0]))
-                }
-                this.element(element);
-                $(element).valid()
-            },
+           
             onkeyup: function (element) {
                 $(element).valid()
                 $('[name="' + element.name + '"]').val(element.value);
@@ -55,7 +49,7 @@ $(document).ready(function () {
                     phoneRegex: true,
                     required: true,
                 },
-                confirm_check:{
+                confirm_check: {
                     required: true,
                 }
 
@@ -82,23 +76,18 @@ $(document).ready(function () {
                 phone: {
                     required: "Поле с номером телефона обязательно к заполнению",
                 },
-                confirm_check:{
+                confirm_check: {
                     required: "Это поле обязательно к заполнению",
                 }
             },
             submitHandler: function (form) {
                 form.submit();
             }
-        });
-        var form2 = $("#form2")
-        form2.validate({
-            onfocusout: function (element) {
-                if (this.currentElements.length != 0 && this.currentElements[0].name == "email") {
-                    rebuidEmail($(this.currentElements[0]))
-                }
-                this.element(element);
-                $(element).valid()
-            },
+        });      
+    });
+    $(function () {
+        var form = $("#form2")
+        form.validate({           
             onkeyup: function (element) {
                 $(element).valid()
                 $('[name="' + element.name + '"]').val(element.value);
@@ -136,30 +125,30 @@ $(document).ready(function () {
             },
             messages: {
                 first_name: {
-                    required: "Поле Имени обязательно к заполнению",
-                    minlength: "Имя должно содержать не менее 2 символов",
-                    maxlength: "Имя может содержать до 25 символов",
+                    required: "Name field is required",
+                    minlength: "The name must contain at least 2 characters",
+                    maxlength: "The name can contain up to 25 characters",
                 },
 
                 last_name: {
-                    required: "Поле Фамилия обязательно к заполнению",
-                    minlength: "Фамилия должна содержать не менее 2 символов",
-                    maxlength: "Фамилия может содержать до 25 символов",
+                    required: "The Last Name field is required",
+                    minlength: "Last name must contain at least 2 characters",
+                    maxlength: "The last name can contain up to 25 characters",
                 },
 
                 email: {
-                    required: "Поле электронной почты обязательно к заполнению",
-                    email: "Электронная почта должна быть действительным адресом",
+                    required: "Email field is required",
+                    email: "Email must be a valid address",
                 },
                 phone: {
-                    required: "Поле с номером телефона обязательно к заполнению",
+                    required: "Phone number field is required",
                 },
                 confirm_check:{
-                    required: "Это поле обязательно к заполнению",
+                    required: "This field is required.",
                 }
             },
-            submitHandler: function (form2) {
-                form2.submit();
+            submitHandler: function (form) {
+                form.submit();
             }
         });
     });

@@ -28,7 +28,8 @@
           <source src="#" type="video/mp4">
         </video>
       </div>
-      <div class="section_main_form" id="register_click">
+      <div id="register_click"></div>
+      <div class="section_main_form" id="dec_form">
         <form action="#" method="post" id="form1">
           <h2 class="form_title">
             Начните зарабатывать на промышленных активах России!
@@ -47,7 +48,7 @@
           </div>
           <div style="display: flex;">
             <div class="form_input_telCode">
-              <input type="tel" name="phone_code" class="phone">
+              <input type="tel"  class="phone">
             </div>
             <div class="form_input floating-label-group floating-label-group_tel">
               <input type="text" name="phone" required>
@@ -97,14 +98,13 @@
         </div>
         <div style="display: flex;">
           <div class="form_input_telCode">
-            <input type="tel" name="phone_code" class="phone">
+            <input type="tel"  class="phone">
           </div>
           <div class="form_input floating-label-group floating-label-group_tel">
             <input type="text" name="phone" required>
             <label class="floating-label">*Номер телефона</label>
           </div>
         </div>
-
         <div class="form_input checkbox_block">
           <label class="checkbox path">
             <input type="checkbox" checked>
@@ -305,30 +305,29 @@
   <script src="js/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/intlTelInput.min.js"></script>
   <script>
-    var divs = document.querySelectorAll('.phone'), i;
-    for (i = 0; i < divs.length; ++i) {
-      window.intlTelInput(divs[i], {
-        utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js',
-        nationalMode: true,
-        defaultCountry: 'auto',
-        separateDialCode: true,
-        initialCountry: "auto",
-        hiddenInput: "full_phone",
-
-        geoIpLookup: function (callback) {
-          $.getJSON('https://api.ipgeolocation.io/ipgeo?apiKey=8b89ec03c3214360aa2696a3cad1e0f7&ip=', function (data) {
-            JSON.stringify(data, null, 2);
-            country = data.country_code2;
-            calling_code = data.calling_code;
-          }).always(function (resp) {
-            var countryCode = (resp && resp.country_code2) ? resp.country_code2 : "us";
-            preferredCountries: [countryCode];
-            callback(countryCode);
-          });
-        }
-      });
-    }
-  </script>
+		var divs = document.querySelectorAll('.phone'), i;
+		for (i = 0; i < divs.length; ++i) {
+			window.intlTelInput(divs[i], {
+				utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js',
+				nationalMode: true,
+				defaultCountry: 'auto',
+				separateDialCode: true,
+				initialCountry: "auto",
+        
+				geoIpLookup: function (callback) {
+					$.getJSON('https://api.ipgeolocation.io/ipgeo?apiKey=8b89ec03c3214360aa2696a3cad1e0f7&ip=', function (data) {
+						JSON.stringify(data, null, 2);
+						country = data.country_code2;
+						calling_code = data.calling_code;    
+					}).always(function (resp) {
+						var countryCode = (resp && resp.country_code2) ? resp.country_code2 : "us";
+						preferredCountries: [countryCode];
+						callback(countryCode);
+					});
+				}
+			});
+		}
+	</script>
   <script src="js/jquery.validate.min.js"></script>
   <script src="js/valid.js"></script>
   <script src="js/ion.rangeSlider.min.js"></script>
