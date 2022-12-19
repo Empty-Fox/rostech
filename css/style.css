@@ -1004,6 +1004,7 @@ footer p a {
     gap: 0px;
     width: 100%;
     padding-top: 24px;  
+    display: block;
   }
 
   .section_main_video {
