@@ -841,6 +841,9 @@ footer p a {
     margin-top: 0;
     padding: 128px 0;
   }
+  .section_aboutProject.maxWidth {
+    width: 100%;
+  }
 
   .section_advantages_icons { 
     flex-direction: column;
