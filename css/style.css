@@ -43,14 +43,14 @@ body {
 .section_main {
   height: auto;
   width: 100%;
-  /* background-image: url(../images/Bg.svg);
+  background-image: url(../images/Bg.svg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; */
+  background-size: cover;
   position: relative;
-  /* min-height: 50vh; */
-  /* background-position: center center; */
+  min-height: 70vh;
+  background-position: center center;
   display: flex;
   flex-direction: column;
 }
