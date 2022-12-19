@@ -1002,7 +1002,7 @@ footer p a {
   .section_main_block {
     gap: 0px;
     width: 100%;
-    padding-top: 24px;  
+    padding-top: 0;  
     display: block;
   }
 
