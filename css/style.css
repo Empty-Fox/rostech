@@ -841,6 +841,11 @@ footer p a {
     margin-top: 0;
     padding: 128px 0;
   }
+  .section_main_characteristics h2 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .section_aboutProject.maxWidth {
     width: 100%;
   }
@@ -892,7 +897,15 @@ footer p a {
 }
 
 @media (max-width:450px) {
-
+  .assets_row1 img, .assets_row2 img  {
+    width: 50%;
+  }
+  .assets_row1, .assets_row2 {
+    row-gap: 55px;
+}
+.assets_row2 {
+  padding-bottom: 102px;
+}
   .section_thank_head_title h1 {
     font-size: 24px;
     line-height: 30px;
