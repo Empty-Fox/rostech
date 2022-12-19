@@ -308,6 +308,7 @@
     var divs = document.querySelectorAll('.phone'), i;
     for (i = 0; i < divs.length; ++i) {
       window.intlTelInput(divs[i], {
+        utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js',
         nationalMode: true,
         defaultCountry: 'auto',
         separateDialCode: true,
