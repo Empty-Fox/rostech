@@ -41,14 +41,14 @@ body {
 }
 
 .section_main {
-  /* min-height: 100vh;*/
-  height: 100%; 
+  height: auto;
   width: 100%;
-  /* background: url(../images/Bg.svg) no-repeat center center;
+  background-image: url(../images/Bg.svg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; */
+  background-size: cover;
+  position: relative;
 }
 
 
