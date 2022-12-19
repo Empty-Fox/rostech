@@ -49,8 +49,9 @@ body {
   -o-background-size: cover;
   background-size: cover;
   position: relative;
-  min-height: 70vh;
+  min-height: 50vh;
   background-position: center center;
+  display: block;
 }
 
 
@@ -1003,6 +1004,7 @@ footer p a {
     gap: 0px;
     width: 100%;
     padding-top: 24px;
+    display: none;
   }
 
   .section_main_video {
