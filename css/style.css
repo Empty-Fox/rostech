@@ -49,6 +49,8 @@ body {
   -o-background-size: cover;
   background-size: cover;
   position: relative;
+  min-height: 70vh;
+  background-position: center center;
 }
 
 
