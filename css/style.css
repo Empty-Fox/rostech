@@ -90,13 +90,13 @@ body {
   padding-top: 59px;
 }
 
-#myvid {
+/* #myvid {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: fit-content;
-}
+} */
 
 .section_main_form {
   background: #FFFFFF;
