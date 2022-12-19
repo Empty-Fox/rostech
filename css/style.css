@@ -49,10 +49,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   position: relative;
-  min-height: 70vh;
-  background-position: center center;
-  display: flex;
-  flex-direction: column;
+  background-position: center center;  
 }
 
 .section_main_head {
@@ -702,7 +699,9 @@ footer p a {
   letter-spacing: 0.8px;
   color: #FFFFFF;
 }
-
+.mob_form {
+  display: none;
+}
 @media (max-width:1550px) {
   .section_main_head {
     padding-top: 41px;
@@ -761,6 +760,15 @@ footer p a {
 }
 
 @media (max-width:768px) {
+  .mob_form {
+    display: block;
+  }
+  .section_main {
+    padding-bottom: 150px;
+}
+  #register_click {
+    display: none;
+  }
   .section_thank_head_title {
     text-align: center;
   }
@@ -841,7 +849,8 @@ footer p a {
 
   .section_main_block {
     flex-direction: column;
-    gap: 230px;
+    gap: 150px;
+    padding-top: 80px;
   }
 
   /* .section_main {
