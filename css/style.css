@@ -992,7 +992,7 @@ footer p a {
   }
 
   .section_main {
-    min-height: 70vh;
+    min-height: fit-content;
     max-height: 530px;
   }
 
