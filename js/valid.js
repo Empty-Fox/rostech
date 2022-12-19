@@ -90,6 +90,78 @@ $(document).ready(function () {
                 form.submit();
             }
         });
+        var form2 = $("#form2")
+        form2.validate({
+            onfocusout: function (element) {
+                if (this.currentElements.length != 0 && this.currentElements[0].name == "email") {
+                    rebuidEmail($(this.currentElements[0]))
+                }
+                this.element(element);
+                $(element).valid()
+            },
+            onkeyup: function (element) {
+                $(element).valid()
+                $('[name="' + element.name + '"]').val(element.value);
+            },
+
+            rules: {
+                first_name: {
+                    required: true,
+                    usernameRegex: true,
+                    minlength: 2,
+                    maxlength: 60,
+                },
+                last_name: {
+                    required: true,
+                    lastusernameRegex: true,
+                    minlength: 2,
+                    maxlength: 60,
+                },
+
+                email: {
+                    required: true,
+                    email: true,
+
+                },
+                phone: {
+                    phoneRegex: true,
+                    required: true,
+                },
+                confirm_check:{
+                    required: true,
+                }
+
+
+
+            },
+            messages: {
+                first_name: {
+                    required: "Поле Имени обязательно к заполнению",
+                    minlength: "Имя должно содержать не менее 2 символов",
+                    maxlength: "Имя может содержать до 25 символов",
+                },
+
+                last_name: {
+                    required: "Поле Фамилия обязательно к заполнению",
+                    minlength: "Фамилия должна содержать не менее 2 символов",
+                    maxlength: "Фамилия может содержать до 25 символов",
+                },
+
+                email: {
+                    required: "Поле электронной почты обязательно к заполнению",
+                    email: "Электронная почта должна быть действительным адресом",
+                },
+                phone: {
+                    required: "Поле с номером телефона обязательно к заполнению",
+                },
+                confirm_check:{
+                    required: "Это поле обязательно к заполнению",
+                }
+            },
+            submitHandler: function (form2) {
+                form2.submit();
+            }
+        });
     });
 
 });
