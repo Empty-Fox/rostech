@@ -734,9 +734,15 @@ footer p a {
   .section_main_characteristics_row {
     flex-direction: column;
     align-items: center;
+    gap: 0;
   }
-
-
+  .section_main_characteristics_row_block_first,
+  .section_main_characteristics_row_block_second {
+    padding-top: 80px;
+  }
+  .pad80 {
+    padding-top: 0;
+}
   .assets_row1,
   .assets_row2 {
     flex-wrap: wrap;
@@ -870,6 +876,7 @@ footer p a {
 }
 
 @media (max-width:450px) {
+
   .section_thank_head_title h1 {
     font-size: 24px;
     line-height: 30px;
