@@ -951,6 +951,8 @@ footer p a {
   .section_main_characteristics h2 {
     font-size: 28px;
     line-height: 34px;
+    max-width: 335px;
+    width: 100%;
   }
 
   .pad128 {
