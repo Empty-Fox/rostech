@@ -835,6 +835,7 @@ footer p a {
   .section_main {
     min-height: 70vh;
     max-height: 828px;
+    height: auto;
   }
 
   .section_main_block,
