@@ -740,6 +740,9 @@ footer p a {
   .section_main_characteristics_row_block_second {
     padding-top: 80px;
   }
+  .section_main_characteristics h2 {
+    padding-bottom: 0;
+  }
   .pad80 {
     padding-top: 0;
 }
