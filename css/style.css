@@ -1003,8 +1003,7 @@ footer p a {
   .section_main_block {
     gap: 0px;
     width: 100%;
-    padding-top: 24px;
-    display: none;
+    padding-top: 24px;  
   }
 
   .section_main_video {
