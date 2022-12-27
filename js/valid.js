@@ -20,7 +20,7 @@ $(document).ready(function () {
     $(function () {
         var form = $("#form1")
         form.validate({
-           
+
             onkeyup: function (element) {
                 $(element).valid()
                 $('[name="' + element.name + '"]').val(element.value);
@@ -83,11 +83,11 @@ $(document).ready(function () {
             submitHandler: function (form) {
                 form.submit();
             }
-        });      
+        });
     });
     $(function () {
         var form = $("#form2")
-        form.validate({           
+        form.validate({
             onkeyup: function (element) {
                 $(element).valid()
                 $('[name="' + element.name + '"]').val(element.value);
@@ -116,7 +116,7 @@ $(document).ready(function () {
                     phoneRegex: true,
                     required: true,
                 },
-                confirm_check:{
+                confirm_check: {
                     required: true,
                 }
 
@@ -143,7 +143,7 @@ $(document).ready(function () {
                 phone: {
                     required: "Phone number field is required",
                 },
-                confirm_check:{
+                confirm_check: {
                     required: "This field is required.",
                 }
             },

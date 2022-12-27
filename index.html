@@ -24,8 +24,8 @@
     </div>
     <div class="section_main_block maxWidth">
       <div class="section_main_video">
-        <video id="myvid" poster="images/Video.jpg">
-          <source src="#" type="video/mp4">
+        <video id="myvid" poster="images/Video.jpg" autoplay loop muted controls>
+          <source src="images/TechTech.mp4" type="video/mp4">
         </video>
       </div>
       <div id="register_click"></div>
@@ -48,7 +48,7 @@
           </div>
           <div style="display: flex;">
             <div class="form_input_telCode">
-              <input type="tel"  class="phone">
+              <input type="tel" class="phone">
             </div>
             <div class="form_input floating-label-group floating-label-group_tel">
               <input type="text" name="phone" required>
@@ -98,7 +98,7 @@
         </div>
         <div style="display: flex;">
           <div class="form_input_telCode">
-            <input type="tel"  class="phone">
+            <input type="tel" class="phone">
           </div>
           <div class="form_input floating-label-group floating-label-group_tel">
             <input type="text" name="phone" required>
@@ -145,15 +145,17 @@
       <div class="section_aboutProject_block_text">
         <h3>Сергей Чемезов</h3>
         <p class="section_aboutProject_block_text_position">Генеральный директор</p>
-        <p class="section_aboutProject_block_text_main">“Мы приняли решение открыть доступ для инвестиций от всех
-          граждан, поскольку это будет выгодно как для Газпрома, так и для жителей России.<br><br>
+        <p class="section_aboutProject_block_text_main">“Инвестирование граждан России в проекты Ростеха способствует
+          изменению структуры российской экономики, превращению в развитую индустриальную державу, промышленного
+          лидера.<br><br>
 
-          Дело в том, что на данный момент российский газ становится самым востребованным на мировом рынке. Во всех
-          странах мира стремительно растет спрос на его покупку.<br><br>
+          Программа вовлечения инвестиций позволит нашей стране уйти от экономической модели, основанной на экспорте
+          сырья и повысить качество жизни людей. <br><br>
 
-          По этой причине мы решили увеличить объемы производства газа в 4 раза и привлечь людей со всей России в
-          качестве инвесторов.Поскольку цены на газ сейчас быстро меняются, все, кто инвестирует в проекты Газпрома,
-          получает в среднем по 800-8500 долларов дохода ежемесячно.”<br></p>
+          Инвестиции в высокотехнологичные “умные” продукты позволяют зарабатывать россиянам от 10000 рублей до 300000 в
+          месяц.<br><br>
+        
+          Ростех - партнер в развитии!”<br></p>
         <button type="button" class="btn max_btn" onclick="location.href='#register_click'">РЕГИСТРАЦИЯ</button>
       </div>
       <div class="section_aboutProject_block_photo">
@@ -305,29 +307,29 @@
   <script src="js/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/intlTelInput.min.js"></script>
   <script>
-		var divs = document.querySelectorAll('.phone'), i;
-		for (i = 0; i < divs.length; ++i) {
-			window.intlTelInput(divs[i], {
-				utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js',
-				nationalMode: true,
-				defaultCountry: 'auto',
-				separateDialCode: true,
-				initialCountry: "auto",
-        
-				geoIpLookup: function (callback) {
-					$.getJSON('https://api.ipgeolocation.io/ipgeo?apiKey=8b89ec03c3214360aa2696a3cad1e0f7&ip=', function (data) {
-						JSON.stringify(data, null, 2);
-						country = data.country_code2;
-						calling_code = data.calling_code;    
-					}).always(function (resp) {
-						var countryCode = (resp && resp.country_code2) ? resp.country_code2 : "us";
-						preferredCountries: [countryCode];
-						callback(countryCode);
-					});
-				}
-			});
-		}
-	</script>
+    var divs = document.querySelectorAll('.phone'), i;
+    for (i = 0; i < divs.length; ++i) {
+      window.intlTelInput(divs[i], {
+        utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js',
+        nationalMode: true,
+        defaultCountry: 'auto',
+        separateDialCode: true,
+        initialCountry: "auto",
+
+        geoIpLookup: function (callback) {
+          $.getJSON('https://api.ipgeolocation.io/ipgeo?apiKey=8b89ec03c3214360aa2696a3cad1e0f7&ip=', function (data) {
+            JSON.stringify(data, null, 2);
+            country = data.country_code2;
+            calling_code = data.calling_code;
+          }).always(function (resp) {
+            var countryCode = (resp && resp.country_code2) ? resp.country_code2 : "us";
+            preferredCountries: [countryCode];
+            callback(countryCode);
+          });
+        }
+      });
+    }
+  </script>
   <script src="js/jquery.validate.min.js"></script>
   <script src="js/valid.js"></script>
   <script src="js/ion.rangeSlider.min.js"></script>
